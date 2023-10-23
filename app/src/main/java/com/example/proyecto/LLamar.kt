@@ -17,6 +17,9 @@ class LLamar : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // EMPEZAMOS AQUI A ESCRIBIR CODIGO
+        // AQUI TERMINA NUESTRO CODIGO
+
         binding = ActivityLlamarBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
