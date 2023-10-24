@@ -8,7 +8,9 @@ import android.widget.Button
 class MainActivity : AppCompatActivity() {
 
     private lateinit var btnllamar: Button
-    private lateinit var intent: Intent
+    private lateinit var intentllamar: Intent
+    private lateinit var btnalarma: Button
+    private lateinit var intentalarma: Intent
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,8 +18,13 @@ class MainActivity : AppCompatActivity() {
 
         btnllamar = findViewById(R.id.boton_llamar)
         btnllamar.setOnClickListener { view ->
-            intent = Intent(this, LLamar::class.java)
-            startActivity(intent)
+            intentllamar = Intent(this, LLamar::class.java)
+            startActivity(intentllamar)
+        }
+        btnalarma = findViewById(R.id.boton_alarma)
+        btnalarma.setOnClickListener { view ->
+            intentalarma = Intent(this, Alarma::class.java)
+            startActivity(intentalarma)
         }
     }
 }

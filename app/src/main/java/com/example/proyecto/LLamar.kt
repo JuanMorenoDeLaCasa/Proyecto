@@ -9,14 +9,13 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 
 class LLamar : AppCompatActivity() {
     private lateinit var Boton_llamar1: Button
-    private lateinit var btnatras: Button
+    private lateinit var btnatrasllamar: Button
     companion object {
-        const val PHONE = "112"
+        const val PHONE = "611100326"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,8 +23,8 @@ class LLamar : AppCompatActivity() {
         setContentView(R.layout.activity_llamar)
         initEvent()
 
-        btnatras = this.findViewById(R.id.boton_atras)
-        btnatras.setOnClickListener { view ->
+        btnatrasllamar = this.findViewById(R.id.boton_atras_llamar)
+        btnatrasllamar.setOnClickListener { view ->
             intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
