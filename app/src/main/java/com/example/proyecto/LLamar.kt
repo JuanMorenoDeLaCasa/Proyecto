@@ -14,7 +14,7 @@ import androidx.core.content.ContextCompat
 
 class LLamar : AppCompatActivity() {
     private lateinit var Boton_llamar1: Button
-
+    private lateinit var btnatras: Button
     companion object {
         const val PHONE = "112"
     }
@@ -23,6 +23,12 @@ class LLamar : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_llamar)
         initEvent()
+
+        btnatras = this.findViewById(R.id.boton_atras)
+        btnatras.setOnClickListener { view ->
+            intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
@@ -60,4 +66,5 @@ class LLamar : AppCompatActivity() {
                 call()
             }
         }
+
 }
