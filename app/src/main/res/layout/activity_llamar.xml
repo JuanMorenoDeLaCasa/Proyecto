@@ -11,8 +11,8 @@
 
     <Button
         android:id="@+id/Boton_llamar1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="160dp"
+        android:layout_height="43dp"
         android:backgroundTint="#fbaa58"
         android:scaleX="2"
         android:scaleY="2"
