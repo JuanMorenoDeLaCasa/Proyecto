@@ -1,12 +1,14 @@
 package com.example.proyecto
 
 import android.Manifest
+import android.Manifest.permission_group.PHONE
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -14,9 +16,7 @@ import androidx.core.content.ContextCompat
 class LLamar : AppCompatActivity() {
     private lateinit var Boton_llamar1: Button
     private lateinit var btnatrasllamar: Button
-    companion object {
-        const val PHONE = "611100326"
-    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,10 +29,11 @@ class LLamar : AppCompatActivity() {
             startActivity(intent)
         }
 
+
     }
 
     private fun initEvent() {
-        Boton_llamar1 = findViewById(R.id.Boton_llamar1)
+        Boton_llamar1 = findViewById(R.id.boton_llamar1)
         Boton_llamar1.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 if (PermissionPhone()) {
@@ -54,6 +55,8 @@ class LLamar : AppCompatActivity() {
     }
 
     private fun call() {
+        val campo = findViewById<EditText>(R.id.campo)
+        val PHONE = campo.text.toString()
         val intent = Intent(Intent.ACTION_CALL)
         intent.data = Uri.parse("tel:$PHONE")
         startActivity(intent)
